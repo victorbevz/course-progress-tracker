@@ -1,0 +1,41 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, sans-serif; color: #1d2939; background: #f5f7fa; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.layout { width: min(900px, calc(100% - 32px)); margin: 40px auto 80px; }
+.page-header { margin-bottom: 30px; }
+.page-header h1 { margin: 4px 0 8px; font-size: clamp(2rem, 5vw, 2.8rem); }
+.page-header p, .description { color: #667085; }
+.eyebrow { margin: 0; color: #315dc3 !important; font-weight: 700; }
+h2 { margin: 0 0 18px; }
+h3 { margin: 0; font-size: 1.3rem; }
+h4 { margin: 24px 0 10px; }
+.panel, .course-card { background: white; border: 1px solid #e0e5ec; border-radius: 14px; padding: 24px; box-shadow: 0 4px 18px #15233b08; }
+.course-list { display: grid; gap: 16px; }
+.form-row { display: flex; align-items: end; gap: 12px; flex-wrap: wrap; }
+.field { display: grid; gap: 6px; flex: 1 1 210px; }
+label { font-weight: 600; }
+input[type="text"] { width: 100%; min-height: 42px; padding: 9px 12px; border: 1px solid #b8c3d2; border-radius: 8px; font: inherit; }
+input:focus-visible, button:focus-visible { outline: 3px solid #86a8ff; outline-offset: 2px; }
+button { min-height: 42px; padding: 9px 15px; border: 1px solid #254eac; border-radius: 8px; background: #315dc3; color: white; font: inherit; font-weight: 650; cursor: pointer; }
+button:hover { background: #254eac; }
+button:disabled { opacity: .55; cursor: wait; }
+button.secondary { background: white; color: #315dc3; }
+button.secondary:hover { background: #edf3ff; }
+button.danger { border-color: #cbd3df; background: white; color: #b42318; }
+button.danger:hover { background: #fff1f0; }
+button.small { min-height: 34px; padding: 5px 10px; font-size: .85rem; }
+.section-heading, .course-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.section-heading { margin: 22px 0 12px; }
+.section-heading h2 { margin: 0; }
+.message { min-height: 24px; margin: 14px 0; color: #216e46; }
+.message.error { color: #b42318; }
+.progress-text { margin: 18px 0 6px; font-weight: 600; }
+progress { width: 100%; height: 12px; accent-color: #315dc3; }
+.lesson-list { list-style: none; padding: 0; margin: 0; }
+.lesson { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid #e9edf2; }
+.lesson-label { display: flex; align-items: center; gap: 9px; font-weight: 400; overflow-wrap: anywhere; }
+.lesson-label input { width: 18px; height: 18px; accent-color: #315dc3; }
+.lesson-label input:checked + span { color: #667085; text-decoration: line-through; }
+.lesson-form { display: flex; gap: 10px; margin-top: 18px; }
+.lesson-form input { flex: 1; }
+@media (max-width: 560px) { .layout { margin-top: 24px; } .panel, .course-card { padding: 18px; } .form-row > button { width: 100%; } .lesson-form { flex-wrap: wrap; } .lesson-form button { width: 100%; } }

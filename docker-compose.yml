@@ -1,0 +1,33 @@
+services:
+  database:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: courses_db
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d courses_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: .
+    ports:
+      - "127.0.0.1:4000:4000"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@database:5432/courses_db
+    depends_on:
+      database:
+        condition: service_healthy
+    command:
+      - sh
+      - -c
+      - python database.py && exec python -m uvicorn api:app --host 0.0.0.0 --port 4000
+
+volumes:
+  postgres_data:

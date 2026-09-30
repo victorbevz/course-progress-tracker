@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course Progress Tracker</title>
+    <link rel="stylesheet" href="/app/style.css">
+    <script src="/app/app.js" defer></script>
+</head>
+<body>
+    <main class="layout">
+        <header class="page-header">
+            <p class="eyebrow">Learning dashboard</p>
+            <h1>Course Progress Tracker</h1>
+            <p>Keep your courses and lessons in one place.</p>
+        </header>
+
+        <section class="panel" aria-labelledby="create-heading">
+            <h2 id="create-heading">Create course</h2>
+            <form id="course-form" class="form-row">
+                <div class="field">
+                    <label for="course-title">Title</label>
+                    <input id="course-title" name="title" type="text" maxlength="200" required>
+                </div>
+                <div class="field">
+                    <label for="course-description">Description</label>
+                    <input id="course-description" name="description" type="text" maxlength="500">
+                </div>
+                <button type="submit">Create course</button>
+            </form>
+        </section>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+
+        <section aria-labelledby="courses-heading">
+            <div class="section-heading">
+                <h2 id="courses-heading">Courses</h2>
+                <button id="refresh-button" type="button" class="secondary">Refresh</button>
+            </div>
+            <div id="course-list" class="course-list"></div>
+        </section>
+    </main>
+</body>
+</html>
